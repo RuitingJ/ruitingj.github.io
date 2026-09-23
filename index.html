@@ -14,9 +14,13 @@
     h1 { font-size: clamp(36px, 6vw, 48px); font-weight: 400; line-height: 1.2; margin: 0 0 14px; letter-spacing: -.8px; }
     .affiliation, .contact, .meta, footer { font-family: system-ui, sans-serif; font-size: 15px; color: var(--muted); }
     .chinese-name { display: inline-block; font-family: "Noto Serif CJK SC", "Songti SC", "SimSun", serif; font-size: .65em; font-weight: 400; letter-spacing: .06em; margin-left: .35em; color: var(--muted); }
-    .portrait { float: right; width: 180px; max-width: 40%; height: auto; margin: 5px 0 22px 30px; border-radius: 4px; }
-    .introduction::after { content: ""; display: block; clear: both; }
-    @media (max-width: 540px) { .portrait { float: none; display: block; width: 160px; max-width: 100%; margin: 0 0 24px; } }
+    header { display: grid; grid-template-columns: minmax(0, 1fr) 210px; column-gap: 30px; align-items: center; }
+    .portrait { display: block; width: 100%; height: auto; border-radius: 4px; }
+    h1 { font-size: clamp(34px, 4vw, 42px); }
+    @media (max-width: 640px) {
+      header { grid-template-columns: 1fr; gap: 24px; }
+      .portrait { width: 190px; max-width: 100%; }
+    }
     .affiliation { margin: 0; }
     .contact { margin: 10px 0 0; }
     p { margin: 0 0 18px; }
@@ -35,13 +39,15 @@
 <body>
   <main>
     <header>
+      <div>
       <h1>Ruiting Jiang <span class="chinese-name" lang="zh-Hans">姜睿霆</span></h1>
       <p class="affiliation">Second-year PhD Student in Philosophy · University of Notre Dame</p>
       <p class="contact">Email: rjiang2 [at] nd.edu</p>
+      </div>
+      <img class="portrait" src="Ruiting_Photo.jpg" alt="Portrait of Ruiting Jiang">
     </header>
 
     <div class="introduction">
-      <img class="portrait" src="Ruiting_Photo.jpg" alt="Portrait of Ruiting Jiang">
       <p>I am a second-year PhD student in Philosophy at the University of Notre Dame. My interests include mathematical and philosophical logic, the foundations of mathematics, philosophy of science, and decision theory.</p>
       <p>I completed my undergraduate degree at the University of Oxford, graduating with an integrated master’s in Mathematics (MMath). I then completed an MSc in Logic at the Institute for Logic, Language and Computation (ILLC), University of Amsterdam.</p>
     </div>
